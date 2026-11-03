@@ -1,0 +1,18 @@
+# Python caches and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+.env
+
+# Generated training logs
+catboost_info/
+
+# Local/raw datasets (the trained artifact is committed for the dashboard)
+data/raw/
+
+# OS/editor files
+.DS_Store
+.vscode/

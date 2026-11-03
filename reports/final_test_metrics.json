@@ -1,0 +1,333 @@
+{
+  "model_name": "HistGradientBoosting",
+  "optimal_threshold": 0.93,
+  "metrics_at_optimal_threshold": {
+    "roc_auc": 0.8624938153465604,
+    "pr_auc": 0.07420930223338545,
+    "precision": 0.23809523809523808,
+    "recall": 0.030534351145038167,
+    "f1": 0.05412719891745602,
+    "balanced_accuracy": 0.5148602527988317,
+    "brier_score": 0.10990882778819015,
+    "tn": 78575,
+    "fp": 64,
+    "fn": 635,
+    "tp": 20
+  },
+  "costs_at_optimal_threshold": {
+    "threshold": 0.93,
+    "total_cost": 13150.0,
+    "savings": -50.0,
+    "baseline_cost": 13100.0,
+    "tn": 78575,
+    "fp": 64,
+    "fn": 635,
+    "tp": 20,
+    "precision": 0.23809523809523808,
+    "recall": 0.030534351145038167
+  },
+  "metrics_at_default_0_5": {
+    "roc_auc": 0.8624938153465604,
+    "pr_auc": 0.07420930223338545,
+    "precision": 0.0365414710485133,
+    "recall": 0.7129770992366412,
+    "f1": 0.06951991068105694,
+    "balanced_accuracy": 0.7782004228618766,
+    "brier_score": 0.10990882778819015,
+    "tn": 66326,
+    "fp": 12313,
+    "fn": 188,
+    "tp": 467
+  },
+  "costs_at_default_0_5": {
+    "threshold": 0.5,
+    "total_cost": 41314.0,
+    "savings": -28214.0,
+    "baseline_cost": 13100.0,
+    "tn": 66326,
+    "fp": 12313,
+    "fn": 188,
+    "tp": 467,
+    "precision": 0.0365414710485133,
+    "recall": 0.7129770992366412
+  },
+  "split_info": {
+    "train_rows": 237882,
+    "val_rows": 79294,
+    "test_rows": 79294,
+    "train_dates": "2010-12-01 08:26:00 to 2011-09-12 12:27:00",
+    "val_dates": "2011-09-12 12:27:00 to 2011-11-02 12:26:00",
+    "test_dates": "2011-11-02 12:26:00 to 2011-12-09 12:50:00",
+    "train_return_rate": 0.01866891988464869,
+    "val_return_rate": 0.018147653038060887,
+    "test_return_rate": 0.008260398012459959
+  },
+  "by_model": {
+    "Dummy (Stratified)": {
+      "optimal_threshold": 0.01,
+      "metrics_at_optimal_threshold": {
+        "roc_auc": 0.5013723062843263,
+        "pr_auc": 0.008286163511898929,
+        "precision": 0.009465855307640297,
+        "recall": 0.021374045801526718,
+        "f1": 0.013120899718837863,
+        "balanced_accuracy": 0.5013723062843263,
+        "brier_score": 0.026559386586626984,
+        "tn": 77174,
+        "fp": 1465,
+        "fn": 641,
+        "tp": 14
+      },
+      "costs_at_optimal_threshold": {
+        "threshold": 0.01,
+        "total_cost": 16685.5,
+        "savings": -3585.5,
+        "baseline_cost": 13100.0,
+        "tn": 77174,
+        "fp": 1465,
+        "fn": 641,
+        "tp": 14,
+        "precision": 0.009465855307640297,
+        "recall": 0.021374045801526718
+      },
+      "metrics_at_default_0_5": {
+        "roc_auc": 0.5013723062843263,
+        "pr_auc": 0.008286163511898929,
+        "precision": 0.009465855307640297,
+        "recall": 0.021374045801526718,
+        "f1": 0.013120899718837863,
+        "balanced_accuracy": 0.5013723062843263,
+        "brier_score": 0.026559386586626984,
+        "tn": 77174,
+        "fp": 1465,
+        "fn": 641,
+        "tp": 14
+      },
+      "costs_at_default_0_5": {
+        "threshold": 0.5,
+        "total_cost": 16685.5,
+        "savings": -3585.5,
+        "baseline_cost": 13100.0,
+        "tn": 77174,
+        "fp": 1465,
+        "fn": 641,
+        "tp": 14,
+        "precision": 0.009465855307640297,
+        "recall": 0.021374045801526718
+      }
+    },
+    "Logistic Regression": {
+      "optimal_threshold": 0.99,
+      "metrics_at_optimal_threshold": {
+        "roc_auc": 0.8047405920706943,
+        "pr_auc": 0.04092782934956811,
+        "precision": 0.03326935380678183,
+        "recall": 0.07938931297709924,
+        "f1": 0.046889089269612265,
+        "balanced_accuracy": 0.5300874641285247,
+        "brier_score": 0.17843231494306247,
+        "tn": 77128,
+        "fp": 1511,
+        "fn": 603,
+        "tp": 52
+      },
+      "costs_at_optimal_threshold": {
+        "threshold": 0.99,
+        "total_cost": 16591.5,
+        "savings": -3491.5,
+        "baseline_cost": 13100.0,
+        "tn": 77128,
+        "fp": 1511,
+        "fn": 603,
+        "tp": 52,
+        "precision": 0.03326935380678183,
+        "recall": 0.07938931297709924
+      },
+      "metrics_at_default_0_5": {
+        "roc_auc": 0.8047405920706943,
+        "pr_auc": 0.04092782934956811,
+        "precision": 0.029509757258448358,
+        "recall": 0.6625954198473283,
+        "f1": 0.05650305949746127,
+        "balanced_accuracy": 0.7405475732230449,
+        "brier_score": 0.17843231494306247,
+        "tn": 64366,
+        "fp": 14273,
+        "fn": 221,
+        "tp": 434
+      },
+      "costs_at_default_0_5": {
+        "threshold": 0.5,
+        "total_cost": 46395.5,
+        "savings": -33295.5,
+        "baseline_cost": 13100.0,
+        "tn": 64366,
+        "fp": 14273,
+        "fn": 221,
+        "tp": 434,
+        "precision": 0.029509757258448358,
+        "recall": 0.6625954198473283
+      }
+    },
+    "Random Forest": {
+      "optimal_threshold": 0.9,
+      "metrics_at_optimal_threshold": {
+        "roc_auc": 0.8594326145302686,
+        "pr_auc": 0.057070938329119886,
+        "precision": 0.3333333333333333,
+        "recall": 0.0015267175572519084,
+        "f1": 0.00303951367781155,
+        "balanced_accuracy": 0.5007506424419482,
+        "brier_score": 0.06363153137203237,
+        "tn": 78637,
+        "fp": 2,
+        "fn": 654,
+        "tp": 1
+      },
+      "costs_at_optimal_threshold": {
+        "threshold": 0.9,
+        "total_cost": 13099.5,
+        "savings": 0.5,
+        "baseline_cost": 13100.0,
+        "tn": 78637,
+        "fp": 2,
+        "fn": 654,
+        "tp": 1,
+        "precision": 0.3333333333333333,
+        "recall": 0.0015267175572519084
+      },
+      "metrics_at_default_0_5": {
+        "roc_auc": 0.8594326145302686,
+        "pr_auc": 0.057070938329119886,
+        "precision": 0.05428091773922775,
+        "recall": 0.4442748091603053,
+        "f1": 0.09674202127659574,
+        "balanced_accuracy": 0.6899014911021074,
+        "brier_score": 0.06363153137203237,
+        "tn": 73569,
+        "fp": 5070,
+        "fn": 364,
+        "tp": 291
+      },
+      "costs_at_default_0_5": {
+        "threshold": 0.5,
+        "total_cost": 24174.5,
+        "savings": -11074.5,
+        "baseline_cost": 13100.0,
+        "tn": 73569,
+        "fp": 5070,
+        "fn": 364,
+        "tp": 291,
+        "precision": 0.05428091773922775,
+        "recall": 0.4442748091603053
+      }
+    },
+    "HistGradientBoosting": {
+      "optimal_threshold": 0.93,
+      "metrics_at_optimal_threshold": {
+        "roc_auc": 0.8624938153465604,
+        "pr_auc": 0.07420930223338545,
+        "precision": 0.23809523809523808,
+        "recall": 0.030534351145038167,
+        "f1": 0.05412719891745602,
+        "balanced_accuracy": 0.5148602527988317,
+        "brier_score": 0.10990882778819015,
+        "tn": 78575,
+        "fp": 64,
+        "fn": 635,
+        "tp": 20
+      },
+      "costs_at_optimal_threshold": {
+        "threshold": 0.93,
+        "total_cost": 13150.0,
+        "savings": -50.0,
+        "baseline_cost": 13100.0,
+        "tn": 78575,
+        "fp": 64,
+        "fn": 635,
+        "tp": 20,
+        "precision": 0.23809523809523808,
+        "recall": 0.030534351145038167
+      },
+      "metrics_at_default_0_5": {
+        "roc_auc": 0.8624938153465604,
+        "pr_auc": 0.07420930223338545,
+        "precision": 0.0365414710485133,
+        "recall": 0.7129770992366412,
+        "f1": 0.06951991068105694,
+        "balanced_accuracy": 0.7782004228618766,
+        "brier_score": 0.10990882778819015,
+        "tn": 66326,
+        "fp": 12313,
+        "fn": 188,
+        "tp": 467
+      },
+      "costs_at_default_0_5": {
+        "threshold": 0.5,
+        "total_cost": 41314.0,
+        "savings": -28214.0,
+        "baseline_cost": 13100.0,
+        "tn": 66326,
+        "fp": 12313,
+        "fn": 188,
+        "tp": 467,
+        "precision": 0.0365414710485133,
+        "recall": 0.7129770992366412
+      }
+    },
+    "CatBoost": {
+      "optimal_threshold": 0.98,
+      "metrics_at_optimal_threshold": {
+        "roc_auc": 0.7524959499438394,
+        "pr_auc": 0.04008523971953858,
+        "precision": 0.14634146341463414,
+        "recall": 0.0183206106870229,
+        "f1": 0.032564450474898234,
+        "balanced_accuracy": 0.5087152335597909,
+        "brier_score": 0.05902517665211166,
+        "tn": 78569,
+        "fp": 70,
+        "fn": 643,
+        "tp": 12
+      },
+      "costs_at_optimal_threshold": {
+        "threshold": 0.98,
+        "total_cost": 13209.0,
+        "savings": -109.0,
+        "baseline_cost": 13100.0,
+        "tn": 78569,
+        "fp": 70,
+        "fn": 643,
+        "tp": 12,
+        "precision": 0.14634146341463414,
+        "recall": 0.0183206106870229
+      },
+      "metrics_at_default_0_5": {
+        "roc_auc": 0.7524959499438394,
+        "pr_auc": 0.04008523971953858,
+        "precision": 0.03735116620453433,
+        "recall": 0.34961832061068704,
+        "f1": 0.06749189507810198,
+        "balanced_accuracy": 0.6372832507693627,
+        "brier_score": 0.05902517665211166,
+        "tn": 72737,
+        "fp": 5902,
+        "fn": 426,
+        "tp": 229
+      },
+      "costs_at_default_0_5": {
+        "threshold": 0.5,
+        "total_cost": 26595.5,
+        "savings": -13495.5,
+        "baseline_cost": 13100.0,
+        "tn": 72737,
+        "fp": 5902,
+        "fn": 426,
+        "tp": 229,
+        "precision": 0.03735116620453433,
+        "recall": 0.34961832061068704
+      }
+    }
+  },
+  "execution_date": "2026-10-22T15:22:14.769847"
+}
