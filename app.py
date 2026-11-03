@@ -10,7 +10,13 @@ import numpy as np
 import streamlit as st
 
 sys.path.insert(0, os.path.dirname(__file__))
-from src.inference import load_artifacts, get_available_models, get_model_threshold, predict
+from src.inference import (
+    load_artifacts,
+    get_available_models,
+    get_model_threshold,
+    predict,
+    get_last_load_error,
+)
 
 # ── paths ─────────────────────────────────────────────────────────────────────
 FIGURES   = "reports/figures"
@@ -298,10 +304,24 @@ tab_pred, tab_bench = st.tabs(["Predict", "Benchmark"])
 # ══════════════════════════════════════════════════════════════════════════════
 with tab_pred:
     if not model_ready or not available_models:
+        load_err = get_last_load_error()
         st.error(
-            "Model artifacts not found. Run `python main.py` to train and serialize the benchmarked models.",
+            "**Model artifacts not loaded.**\n\n"
+            f"{load_err if load_err else 'The pre-trained model bundle was not found or is incompatible with this Python/NumPy environment.'}",
             icon="🚫",
         )
+        st.info(
+            "💡 You can initialize, train, and serialize all benchmarked models directly in this environment. "
+            "Because pre-processed features are bundled in the repository, training all 5 models takes ~30 seconds."
+        )
+        if st.button("🚀 Train & Generate Compatible Models Now (~30s)", type="primary"):
+            with st.spinner("Training models & saving compatible artifacts in this environment..."):
+                import main as pipeline_main
+                pipeline_main.run_pipeline()
+                st.cache_resource.clear()
+                st.cache_data.clear()
+                st.success("✅ Models successfully trained and serialized! Reloading...")
+                st.rerun()
     else:
         # ── Model Selector Bar ────────────────────────────────────────────────
         st.markdown(

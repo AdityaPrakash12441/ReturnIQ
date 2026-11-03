@@ -11,19 +11,46 @@ import pandas as pd
 from typing import Tuple, Dict, Any, Optional, List
 
 logger = logging.getLogger("returniq.inference")
-_ARTIFACT_PATH = os.path.join(os.path.dirname(__file__), "..", "models", "model_artifacts.joblib")
+
+CANDIDATE_PATHS = [
+    os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "models", "model_artifacts.joblib")),
+    os.path.normpath(os.path.join(os.getcwd(), "models", "model_artifacts.joblib")),
+    os.path.normpath("models/model_artifacts.joblib"),
+    os.path.abspath("models/model_artifacts.joblib"),
+]
+
+
+def get_artifact_path() -> Optional[str]:
+    for p in CANDIDATE_PATHS:
+        if os.path.exists(p):
+            return p
+    return None
+
+
+_LAST_LOAD_ERROR: Optional[str] = None
+
+
+def get_last_load_error() -> Optional[str]:
+    return _LAST_LOAD_ERROR
 
 
 def load_artifacts() -> Optional[Dict[str, Any]]:
     """Load and return the serialised model bundle, or None on failure."""
-    path = os.path.normpath(_ARTIFACT_PATH)
-    if not os.path.exists(path):
-        logger.warning("Artifact not found: %s", path)
+    global _LAST_LOAD_ERROR
+    _LAST_LOAD_ERROR = None
+
+    path = get_artifact_path()
+    if not path:
+        _LAST_LOAD_ERROR = f"File 'models/model_artifacts.joblib' not found in search paths: {CANDIDATE_PATHS}"
+        logger.warning(_LAST_LOAD_ERROR)
         return None
+
     try:
-        return joblib.load(path)
+        bundle = joblib.load(path)
+        return bundle
     except Exception as exc:
-        logger.error("Failed to load artifacts: %s", exc)
+        _LAST_LOAD_ERROR = f"Failed to unpickle '{path}': {type(exc).__name__}: {exc}"
+        logger.error(_LAST_LOAD_ERROR)
         return None
 
 
